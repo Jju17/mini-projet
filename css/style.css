@@ -1,15 +1,22 @@
+
+
+
 body {
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif; 
     font-size: 1rem;
     color: #404040;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 * {
     box-sizing: border-box;
 }
 
+
+/***** INTRODUCTION *****/
 .intro {
     background-image: url(../img/cover-img.png);
     background-size: cover;
@@ -69,6 +76,9 @@ h1 + p {
 }
 
 
+
+
+/***** MAIN CONTENT *****/
 .main-content {
     display: flex;
     flex-direction: column;
@@ -122,6 +132,23 @@ h1 + p {
     margin: 0 25%;
     font-weight: 600;
     font-size: small;
+}
+
+@media (min-width: 600px) {
+    body {
+        flex-direction: row;
+    }
+
+    .intro {
+        min-height: 100vh;
+        min-width: 50vw;
+    }
+
+    .main-content {
+        min-height: 100vh;
+        min-width: 50vw;
+        justify-content: center;
+    }
 }
 
 
