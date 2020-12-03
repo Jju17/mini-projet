@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mini-projet</title>
-    <script src="js/index.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,800,900&display=swap" rel="stylesheet">
 </head>
@@ -19,17 +18,19 @@
         </div>
     </div>
 
-    <div class="main-content">
+    <div class="main-content" id="Main-Content">
         <h3 class="mc-h3">En savoir plus sur moi!</h3>
         <p class="mc-register">REGISTER NOW</p>
         <p class="mc-p">Actuellement étudiant en informatique à l’ephec de Louvain-La-Neuve, je cherche tous les jours à m’améliorer et partager mes nouvelles découvertes, si cela vous intéresse, n’hésitez pas à vous abonner à cette newsletter mensuelle!</p>
 
-        <form action="#" class="mc-form">
-            <input class="mc-button" type="text" placeholder="first name">
-            <input class="mc-button" type="email" placeholder="email">
-            <button class="mc-button-submit">REGISTER</button>
+        <form action="#" class="mc-form" id="Email-Collector" method="POST">
+            <input name="firstName" class="mc-button" type="text" placeholder="first name">
+            <input name="emailAddress" class="mc-button" type="email" placeholder="email">
+            <button class="mc-button-submit" type="submit">REGISTER</button>
         </form>
         <p class="mc-information">We will never share youre information without your permission</p>
     </div>
+
+    <script src="js/index.js"></script>
 </body>
 </html>
