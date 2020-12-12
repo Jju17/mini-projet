@@ -16,7 +16,7 @@ var datacv = [
             {
                 "id": "1",
                 "title": "Cook4Me",
-                "data": "",
+                "date": "2020",
                 "post": "Fondateur / Dev",
                 "details": "Conception d'une application mobile & site web pour une startup étudiante"
               }
@@ -25,35 +25,35 @@ var datacv = [
             {
                 "id": "1",
                 "title": "ESN Louvain-La-Neuve (Erasmus Student Network)",
-                "data": "",
+                "date": "2019",
                 "post": "IT Manager",
                 "details": "Maintenante du site internet www.esnlln.org, Gestion du site en étroite collaboration avec les teams events et le communication manager"
             },
             {
                 "id": "2",
                 "title": "Oxfam",
-                "data": "",
+                "date": "2018",
                 "post": "Bénévole",
                 "details": "Arrangement des rayons, Caisse"
             },
             {
                 "id": "3",
                 "title": "H&M",
-                "data": "",
+                "date": "2017",
                 "post": "Intérimaire",
                 "details": "Arrangement des rayons,Mise en place"
             },
             {
                 "id": "4",
                 "title": "Traiteur Léonard",
-                "data": "",
+                "date": "2016",
                 "post": "Job étudiant, serveur",
                 "details": "Service, Montage"
             },
             {
                 "id": "5",
                 "title": "Upper Organic",
-                "data": "",
+                "date": "2016",
                 "post": "Job étudiant",
                 "details": "Production de jus detox & vegetal mix"
             }
@@ -62,8 +62,7 @@ var datacv = [
       }
 ]
   
-
-
+let sortingBy = "nom";
 
 
 
@@ -96,25 +95,75 @@ const cvHTML = `
             </div>
             <div class="cv-experience-previous">
                 <h4>Années passées</h4>
-                ${datacv[1].doneJobs.map(job => (
-                    `
-                    <div>
-                        <h5>${job.title}</h5> 
-                        <p>${job.post}</p>
-                        <p>${job.details}</p>
-                    </div>
-                    `
-                ))}
+                <button id="sortButton" onclick="sortJobs();">Trier par nom</button>
+                <div id="jobs">
+                    ${datacv[1].doneJobs.map(job => (
+                        `
+                        <div>
+                            <h5>${job.title}</h5> 
+                            <p>${job.date}</p>
+                            <p>${job.post}</p>
+                            <p>${job.details}</p>
+                        </div>
+                        `
+                    )).join(' ')}
+                </div>
             </div>
         </div>
     </div>
 `
 
 
+
 document.getElementById("cvButton").addEventListener("click", () => {
     document.getElementById("mainContent").innerHTML = cvHTML;
 })
 
+
+function sortJobs() {
+let tabJobs = [];
+
+    if(sortingBy === "date") {
+        let tabJobs = datacv[1].doneJobs.slice(0);
+        tabJobs.sort(function(a,b) {
+            return b.date - a.date;
+        });
+        let jobsHTML = tabJobs.map(job => (
+            `
+                <div>
+                    <h5>${job.title}</h5> 
+                        <p>${job.date}</p>
+                        <p>${job.post}</p>
+                        <p>${job.details}</p>
+                </div>
+            `
+        )).join('')
+        document.getElementById('jobs').innerHTML = jobsHTML
+        sortingBy = "nom"
+        document.getElementById('sortButton').textContent = "Trier par Nom"
+    } 
+    else if (sortingBy === "nom") { 
+        let tabJobs = datacv[1].doneJobs.slice(0);
+        tabJobs.sort(function(a,b) {
+            if(a.title < b.title) { return -1; }
+            if(a.title > b.title) { return 1; }
+        });
+        let jobsHTML = tabJobs.map(job => (
+            `
+                <div>
+                    <h5>${job.title}</h5> 
+                        <p>${job.date}</p>
+                        <p>${job.post}</p>
+                        <p>${job.details}</p>
+                </div>
+            `
+        )).join('')
+        document.getElementById('jobs').innerHTML = jobsHTML
+        sortingBy = "date"
+        document.getElementById('sortButton').textContent = "Trier par Date"
+    }
+
+}
 
 
 
