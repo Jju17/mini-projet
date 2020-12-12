@@ -1,15 +1,9 @@
 
+const cvHTML = `
 
-fetch('../fixtures/data-cv.json')
-    .then(response => response.json())
-    .then(data => console.log(data))
-
-
-const cvHTML = ``
-
-
-
-
+`
+var mydata = JSON.parse(datacv);
+console.log(mydata)
 
 document.getElementById("cvButton").addEventListener("click", () => {
     document.getElementById("mainContent").innerHTML = cvHTML;

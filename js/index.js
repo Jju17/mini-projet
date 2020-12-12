@@ -1,6 +1,6 @@
 let emailCollectorForm = document.getElementById("Email-Collector");
 
-console.log(emailCollectorForm);
+// console.log(emailCollectorForm);
 
 emailCollectorForm.addEventListener("submit", event => {
 
@@ -12,7 +12,7 @@ emailCollectorForm.addEventListener("submit", event => {
     let userFirstName = ourFormData.get("firstName")
     let userEmailAddress = ourFormData.get("emailAddress")
     
-    console.log(userFirstName, userEmailAddress)
+    // console.log(userFirstName, userEmailAddress)
         
     let updatedHtmlContent = `
         <h2>Congratulations, ${userFirstName}!</h2>
