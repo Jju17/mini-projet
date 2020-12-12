@@ -8,7 +8,7 @@
 
 - Utiliser la méthode d'array "sort" pour pouvoir trier l'affichage
 
-- Ajouter un bouton dans la page qui enclenchera un traitement nécessitant une boucle, du calcul, une condition et une fonction. Afficher le résultat dans la page.
+<!-- - Ajouter un bouton dans la page qui enclenchera un traitement nécessitant une boucle, du calcul, une condition et une fonction. Afficher le résultat dans la page. -->
 
 <!-- - Rendre l'affichage bien structuré, joli, clair -->
 

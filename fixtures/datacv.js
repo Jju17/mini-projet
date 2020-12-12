@@ -1,6 +1,15 @@
-[
+var datacv = [
     {
-        "id": 0,
+        "id": 1,
+        "contentTitle": "Contact",
+        "phoneNumber": "0479506841",
+        "email": "julien.rahier@gmail.com",
+        "addess": "8/002 Rue Constantin Meunier 1348 Louvain-La-Neuve Belgique",
+        "linkedin": "@julien-rahier"
+        
+    },
+    {
+        "id": 2,
         "contentTitle": "Expérience",
         "actualJobs": [
             {
@@ -43,7 +52,6 @@
             }
             
         ]
-    }
+      }
 ]
-
   

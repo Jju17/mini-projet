@@ -15,11 +15,11 @@ emailCollectorForm.addEventListener("submit", event => {
     // console.log(userFirstName, userEmailAddress)
         
     let updatedHtmlContent = `
-        <h2>Congratulations, ${userFirstName}!</h2>
+        <h2>Félicitations, ${userFirstName}!</h2>
 
-        <p>You're on your way to becoming a good coder!</p>
+        <p>Tu es bien abonné à ma Newsletter</p>
         
-        <p class="fine-print">You will get monthly coder tips sent to: ${userEmailAddress}</p>
+        <p class="fine-print">Je t'enverrai régulièrement des infos sur :  ${userEmailAddress}</p>
     `
 
     let updatedContentContainer = document.getElementById("Main-Content")
