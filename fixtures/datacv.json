@@ -1,4 +1,5 @@
-datacv = '[{
+[
+    {
         "id": 0,
         "contentTitle": "Expérience",
         "actualJobs": [
@@ -42,6 +43,7 @@ datacv = '[{
             }
             
         ]
-      }]'
+    }
+]
 
   
